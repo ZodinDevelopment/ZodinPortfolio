@@ -1,0 +1,14 @@
+<html>
+  <head>
+    {% if title %}
+    <title>{{ title }} - Bytes Teutonic</title>
+    {% else %}
+    <title>Bytes Teutonic</title>
+    {% endif %}
+  </head>
+  <body>
+    <div>The Round Table: <a href="/index">Home</a></div>
+    <hr>
+    {% block content %}{% endblock %}
+  </body>
+</html>

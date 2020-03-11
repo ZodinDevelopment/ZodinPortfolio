@@ -1,0 +1,16 @@
+<html>
+  <head>
+    {% if title %}
+    <title>{{ title }} - Bytes Teutonic</title>
+    {% else %}
+    <title>Home Page - Bytes Teutonic</title>
+    {% endif %}
+  </head>
+  <body>
+    <h1>Welcome, {{ user.username }} to the Order.</h1>
+    {% for post in posts %}
+    <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
+    {% endfor %}
+  </body>
+</html>
+
