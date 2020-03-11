@@ -1,14 +1,27 @@
 <html>
-  <head>
-    {% if title %}
-    <title>{{ title }} - Bytes Teutonic</title>
-    {% else %}
-    <title>Bytes Teutonic</title>
-    {% endif %}
-  </head>
-  <body>
-    <div>The Round Table: <a href="/index">Home</a></div>
-    <hr>
-    {% block content %}{% endblock %}
-  </body>
+    <head>
+        {% if title %}
+        <title>{{ title }} - Bytes Teutonic</title>
+        {% else %}
+        <title>Welcome - Bytes Teutonic</title>
+        {% endif %}
+    </head>
+    <body>
+        <div>
+            The Bytes Teutonic:
+            <a href="/index">Home</a>
+            <a href="/login">Sign In</a>
+        </div>
+        <hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </body>
 </html>
